@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.topNave { @apply inline-block text-white text-left text-xxs outline-none focus:outline-none items-center; }
+.navLink { @apply flex justify-end hover:text-juaso-secondary font-light; }
+
+.userNav { @apply inline-block py-1 text-gray-500 flex justify-end text-sm }
+.userLink { @apply pl-8 hover:text-juaso-secondary ease-in-out }
+.btn-juaso-primary { @apply inline-block px-7 py-2 text-xs font-medium leading-4 text-center text-white transition bg-juaso-primary rounded shadow hover:bg-juaso-secondary; }
+.btn-juaso-secondary { @apply inline-block px-7 py-2 text-xs font-medium leading-4 text-center text-white transition bg-juaso-primary rounded shadow hover:bg-juaso-secondary; }
+.btn-juaso { @apply inline-block px-7 py-2 text-xs font-medium leading-4 text-center text-gray-500 transition border border-blue-900 rounded }
