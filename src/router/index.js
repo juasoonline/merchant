@@ -7,7 +7,7 @@ const routes =
     { path: '/', name: 'Home', component: Home },
     { path: '/about', name: 'About', component: () => import( '../views/main/About.vue') },
 
-    // Dashboard routes
+    // dashboard routes
     { path: '/dashboard', name: 'Dashboard', component: () => import( '../views/dashboard/Dashboard') },
     { path: '/login', name: 'Login', component: () => import( '../views/dashboard/Login') }
 ]
