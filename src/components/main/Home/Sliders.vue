@@ -4,7 +4,7 @@
     <section class="text-center">
         <swiper :slides-per-view="1" :speed="1000" :autoplay="{ autoplay: true, delay: 5000 }" :pagination="{ clickable: true }">
             <swiper-slide v-for="banner in AdBanners" :key="banner.resource_id">
-                <div class="swiper-container"><router-link to="/store/1234567890"><img v-bind:src="banner.image" :alt="banner.desc"></router-link></div>
+                <div class="swiper-container"><img v-bind:src="banner.image" :alt="banner.desc"></div>
             </swiper-slide>
         </swiper>
     </section>
