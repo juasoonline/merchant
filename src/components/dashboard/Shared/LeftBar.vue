@@ -1,7 +1,7 @@
 <template>
 
     <!-- Begin left contents -->
-    <aside class="h-screen w-1/6 border-gray-300 shadow bg-gray-50">
+    <aside class="h-auto w-1/6 border-gray-300 shadow bg-gray-50">
         <div class="">
 
             <!--Begin logo-->
