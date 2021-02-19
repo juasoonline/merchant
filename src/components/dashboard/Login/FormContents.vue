@@ -18,7 +18,7 @@
 
                     <!-- Begin form -->
                     <div>
-                        <form>
+                        <form @submit.prevent="signIn">
                             <div class="mt-6 text-sm">
 
                                 <!-- Begin email -->
@@ -63,7 +63,7 @@
                                 <!-- Begin submit button -->
                                 <div class="mt-6">
                                     <div class="flex mt-3">
-                                        <button type="button" class="rounded bg-juaso-primary text-white font-bold px-3 py-2 w-full focus:outline-none hover:bg-juaso-secondary">Login</button>
+                                        <button type="button" @click="signIn" class="rounded bg-juaso-primary text-white font-bold px-3 py-2 w-full focus:outline-none hover:bg-juaso-secondary">Login</button>
                                     </div>
                                 </div>
                                 <!-- End submit button -->
@@ -92,10 +92,19 @@
     export default
     {
         name: "FormContents",
+
         data()
         {
             return {
                 mainLogo: './assets/img/logo.png',
+            }
+        },
+
+        methods :
+        {
+            signIn()
+            {
+                this.$router.push('/dashboard');
             }
         }
     }

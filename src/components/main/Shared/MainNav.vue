@@ -7,9 +7,7 @@
 
                 <!-- Begin logo --->
                 <div class="flex justify-start">
-                    <router-link to="/" class="p-0 flex">
-                        <img :src="mainLogo" alt="" class="h-10 py-1.5">
-                    </router-link>
+                    <router-link to="/" class="p-0 flex"><img :src="mainLogo" alt="" class="h-10 py-1.5"></router-link>
                 </div>
                 <!-- End logo --->
 
