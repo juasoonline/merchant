@@ -20,11 +20,15 @@
 
 <script>
     import LeftBar from "@/components/dashboard/Shared/LeftBar";
-    import MainContents from "@/components/dashboard/Dashboard/MainContents";
+    import MainContents from "@/components/dashboard/Products/MainContents";
 
     export default
     {
-        name: 'Dashboard',
-        components: { LeftBar, MainContents },
+        name: "Products",
+        components: { LeftBar, MainContents }
     }
 </script>
+
+<style scoped>
+
+</style>
