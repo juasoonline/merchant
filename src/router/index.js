@@ -6,6 +6,11 @@ const routes =
     // Main site routes
     { path: '/',                name: 'Home',       component: Home },
     { path: '/about',           name: 'About',      component: () => import( '../views/main/About.vue' ) },
+    { path: '/', name: 'Home', component: Home },
+    { path: '/about', name: 'About', component: () => import( '../views/main/About') },
+    { path: '/news', name: 'News', component: () => import( '../views/main/News') },
+    { path: '/support', name: 'Support', component: () => import( '../views/main/Support') },
+    { path: '/join', name: 'Join', component: () => import( '../views/main/Join') },
 
     // Dashboard routes
     { path: '/login',           name: 'Login',      component: () => import( '../views/dashboard/Login' ) },
