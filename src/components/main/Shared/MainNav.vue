@@ -16,11 +16,11 @@
                 <!-- Begin user shopping -->
                 <div class="flex justify-end">
                     <ul class="userNav">
-                        <li class="userLink relative mt-2"><router-link to="/wishlist">Home</router-link></li>
-                        <li class="userLink relative mt-2"><router-link to="/wishlist">News</router-link></li>
-                        <li class="userLink relative mt-2"><router-link to="/wishlist">Support</router-link></li>
-                        <li class="userLink relative"><router-link to="/wishlist" class="btn-juaso-primary">Join Juasoonline</router-link></li>
-                        <li class="userLink relative"><router-link to="/wishlist" class="btn-juaso">Login</router-link></li>
+                        <li class="userLink relative mt-2"><router-link to="/">Home</router-link></li>
+                        <li class="userLink relative mt-2"><router-link to="/news">News</router-link></li>
+                        <li class="userLink relative mt-2"><router-link to="/support">Support</router-link></li>
+                        <li class="userLink relative"><router-link to="/join" class="btn-juaso-primary">Join Juasoonline</router-link></li>
+                        <li class="userLink relative"><router-link to="/login" class="btn-juaso">Login</router-link></li>
                     </ul>
                 </div>
                 <!-- Begin user shopping -->
