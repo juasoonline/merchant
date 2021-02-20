@@ -1,17 +1,19 @@
 <template>
 
     <!-- Begin left contents -->
-    <aside class="h-auto w-1/6 border-gray-300 shadow bg-gray-50">
+    <aside class="sticky top-0 z-40 h-screen w-1/6 border-gray-300 shadow bg-gray-50">
         <div class="">
 
             <!--Begin logo-->
-            <div class="border-b m-7">
-                <img :src="mainLogo" alt="" class="w-24 pb-4">
+            <div class="border-b border-gray-100 m-7">
+                <router-link to="/dashboard" class="focus:outline-none">
+                    <img :src="mainLogo" alt="" class="w-24 pb-4">
+                </router-link>
             </div>
             <!--End logo-->
 
             <!-- Begin user info -->
-            <div class="border-b m-7 pb-7 flex justify-between items-center">
+            <div class="border-b border-gray-100 m-7 pb-7 flex justify-between items-center">
 
                 <!-- Begin user icon -->
                 <div class="">
@@ -29,9 +31,20 @@
                 <!-- End user name/role -->
 
                 <!-- Begin drop icon -->
-                <div class="">
+                <div class="text-xs dropMenu group">
                     <div class="bg-juaso-primary p-1 rounded hover:bg-juaso-secondary cursor-pointer">
                         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="z-50 bg-white shadow-lg rounded right-7 w-52 mt-1 transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top">
+                        <div class="text-juaso-primary font-bold pt-5 px-2.5 text-center">Welcome to Juasoonline</div>
+                        <div class="m-auto flex pt-5 px-2.5 pb-3 border-b justify-center">
+                            <router-link to="/register" class="justify-start inline-block mr-1 px-7 py-1 text-xs font-medium leading-4 text-center text-white transition bg-juaso-primary rounded shadow ripple hover:bg-juaso-secondary">Join</router-link>
+                            <router-link to="/login" class="justify-end inline-block ml-1 px-7 py-1 text-xs font-medium leading-4 text-center text-white transition bg-juaso-secondary rounded shadow ripple hover:bg-juaso-primary">Login</router-link>
+                        </div>
+                        <ul class="w-full dropMenu text-gray-600">
+                            <li class="px-3 py-1.5 hover:bg-juaso-secondary"><router-link to="/stores" class="flex hover:text-white hover:border-gray-600">My Favorite Stores</router-link></li>
+                            <li class="px-3 py-1.5 hover:bg-juaso-secondary"><router-link to="/coupons" class="flex hover:text-white hover:border-gray-600">My Coupons</router-link></li>
+                        </ul>
                     </div>
                 </div>
                 <!-- End drop icon -->
@@ -121,6 +134,7 @@
     export default
     {
         name: "LeftBar",
+
         data()
         {
             return {
@@ -133,5 +147,13 @@
 </script>
 
 <style scoped>
+    .dropdown:hover .dropdown-menu { display: block; }
 
+    .dropMenu.li>ul                 { transform: translatex(100%) scale(0) }
+    .dropMenu.li:hover>ul           { transform: translatex(101%) scale(1) }
+    .dropMenu.li > button svg       { transform: rotate(-90deg) }
+    .dropMenu.li:hover > button svg { transform: rotate(-270deg) }
+
+    .group:hover .group-hover\:scale-100 { transform: scale(1) }
+    .group:hover .group-hover\:-rotate-180 { transform: rotate(180deg) }
 </style>
