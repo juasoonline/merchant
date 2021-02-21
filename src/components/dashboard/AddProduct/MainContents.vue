@@ -257,7 +257,7 @@
     export default
     {
         name: "MainContents",
-      components: { TopNavBar }
+        components: { TopNavBar }
     }
 </script>
 
