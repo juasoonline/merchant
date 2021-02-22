@@ -28,7 +28,7 @@
         <!-- Begin form section -->
         <section class="px-6">
             <div class="">
-                <form @submit.prevent="" class="">
+                <form @submit.prevent="addProduct" class="">
 
                     <!-- Begin basic info -->
                     <div class="bg-white rounded mb-5 p-5">
@@ -130,7 +130,7 @@
                                     <div class="w-12 z-10 text-center pointer-events-none flex items-start justify-center border-l border-t border-b rounded-l">
                                         <svg class="w-6 h-6 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
                                     </div>
-                                    <textarea rows="4" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Product Description"></textarea>
+                                    <textarea v-model="description" rows="4" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Product Description"></textarea>
                                 </div>
                             </div>
                             <!-- End description -->
@@ -156,7 +156,7 @@
 
                             <!-- Begin add button -->
                             <div class="text-xs">
-                                <button @click="addSpecification" class="flex items-center rounded bg-juaso-primary text-white font-bold px-5 py-2 w-full focus:outline-none hover:bg-juaso-secondary">
+                                <button type="button" @click="addSpecification" class="flex items-center rounded bg-juaso-primary text-white font-bold px-5 py-2 w-full focus:outline-none hover:bg-juaso-secondary">
                                     <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path></svg>
                                     <span class="uppercase text-xxxs font-bold">Add more</span>
                                 </button>
@@ -219,7 +219,7 @@
 
                             <!-- Begin add button -->
                             <div class="text-xs">
-                                <button @click="addOverview" class="flex items-center rounded bg-juaso-primary text-white font-bold px-5 py-2 w-full focus:outline-none hover:bg-juaso-secondary">
+                                <button type="button" @click="addOverview" class="flex items-center rounded bg-juaso-primary text-white font-bold px-5 py-2 w-full focus:outline-none hover:bg-juaso-secondary">
                                     <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path></svg>
                                     <span class="uppercase text-xxxs font-bold">Add more</span>
                                 </button>
@@ -294,7 +294,7 @@
 
                             <!-- Begin add button -->
                             <div class="text-xs">
-                                <button @click="addFile" class="flex items-center rounded bg-juaso-primary text-white font-bold px-5 py-2 w-full focus:outline-none hover:bg-juaso-secondary">
+                                <button type="button" @click="addFile" class="flex items-center rounded bg-juaso-primary text-white font-bold px-5 py-2 w-full focus:outline-none hover:bg-juaso-secondary">
                                     <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path></svg>
                                     <span class="uppercase text-xxxs font-bold">Add more</span>
                                 </button>
@@ -343,6 +343,21 @@
                     </div>
                     <!-- End images -->
 
+                    <!-- Begin submit button -->
+                    <div class="bg-white rounded my-5 p-5">
+                        <div class="flex text-right justify-end">
+                            <button type="submit" class="flex items-center rounded bg-green-800 text-white font-bold px-5 py-2 mr-4 focus:outline-none hover:bg-green-700">
+                                <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path></svg>
+                                <span class="uppercase text-xxs">Add Product</span>
+                            </button>
+                            <router-link to="/products" class="flex items-center rounded bg-red-700 text-white font-bold px-5 py-2 focus:outline-none hover:bg-red-600">
+                                <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                <span class="uppercase text-xxs">Cancel</span>
+                            </router-link>
+                        </div>
+                    </div>
+                    <!-- Begin submit button -->
+
                 </form>
             </div>
         </section>
@@ -355,6 +370,7 @@
 
 <script>
     import TopNavBar from "@/components/dashboard/Shared/TopNavBar";
+    import axios from "axios";
 
     export default
     {
@@ -363,6 +379,13 @@
         data() { return { name: "", quantity: "", sales_price: "", price: "", description: "", categories: [ { "type" : "Category", "category_id" : "75" }, { "type" : "Category", "category_id" : "76" }, { "type" : "Category", "category_id" : "78" }, ], specifications: [], overviews: [], files: [] } },
         methods :
         {
+            addProduct: function ()
+            {
+                axios( { method: 'POST', url: 'products', headers: {}, data: { "data" : { "type" : "Product", "attributes" : { "name" : this.name, "quantity" : this.quantity, "sales_price" : this.sales_price, "price" : this.price, "description" : this.description }, "relationships" : { "store" : { "store_id" : "1" }, "brand" : {}, "categories" : { "data": this.categories }, "specifications" : { "data": this.specifications }, "overviews" : { "data": this.overviews }, "files" : { "data": this.files } } } } } )
+                    .then( response => { if ( response.status === 200 || response.status === 201 ){ response.data.message } } )
+                    .catch( error => { console.log( error.response ); } )
+            },
+
             addSpecification()
             {
                 this.specifications.push(
@@ -415,10 +438,9 @@
               let file = event.target.files[0];
                 fileIndex.file = file
             },
-        }
+        },
     }
 </script>
 
 <style scoped>
-
 </style>

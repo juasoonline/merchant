@@ -28,6 +28,10 @@
         </section>
         <!-- End content header -->
 
+        <section class="p-6">
+            {{ products }}
+        </section>
+
     </div>
     <!-- End main contents -->
 
@@ -35,11 +39,26 @@
 
 <script>
     import TopNavBar from "@/components/dashboard/Shared/TopNavBar";
+    import axios from "axios";
 
     export default
     {
         name: "MainContents",
-        components: { TopNavBar }
+        components: { TopNavBar },
+        data(){ return{ products: [] } },
+        methods:
+        {
+            getProducts()
+            {
+              axios( { method: 'GET', url: 'products', headers: {  } } )
+                  .then( response => setTimeout( () => { this.products = response.data.data }, 1000 ) )
+                  .catch ( function ( error ) { console.log( error ); } )
+            }
+        },
+        created()
+        {
+            this.getProducts();
+        }
     }
 </script>
 
