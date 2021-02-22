@@ -9,19 +9,19 @@
 
         <!-- Begin content header -->
         <section class="p-6">
-          <div class="flex justify-between text-center">
+            <div class="flex justify-between text-center">
 
-            <!-- Begin page title -->
-            <div class="font-bold text-xl text-gray-600">Add Products</div>
-            <!-- End page title -->
+                <!-- Begin page title -->
+                <div class="font-bold text-xl text-gray-600">Add Products</div>
+                <!-- End page title -->
 
-            <!-- Begin breadcrumb -->
-            <div class="text-xs text-gray-600">
-                <span class="">Add Product</span>
+                <!-- Begin breadcrumb -->
+                <div class="text-xs text-gray-600">
+                    <span class="">Add Product</span>
+                </div>
+                <!-- End breadcrumb -->
+
             </div>
-            <!-- End breadcrumb -->
-
-          </div>
         </section>
         <!-- End content header -->
 
@@ -50,7 +50,7 @@
                                     <div class="w-12 z-10 text-center pointer-events-none flex items-center justify-center border-l border-t border-b rounded-l">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
                                     </div>
-                                    <input type="text" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Product Name">
+                                    <input type="text" v-model="name" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Product Name">
                                 </div>
                             </div>
                             <!-- End product name -->
@@ -62,7 +62,7 @@
                                     <div class="w-12 z-10 text-center pointer-events-none flex items-center justify-center border-l border-t border-b rounded-l">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
                                     </div>
-                                    <input type="text" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Product Quantity">
+                                    <input type="text" v-model="quantity" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Product Quantity">
                                 </div>
                             </div>
                             <!-- End quantity -->
@@ -74,7 +74,7 @@
                                     <div class="w-12 z-10 text-center pointer-events-none flex items-center justify-center border-l border-t border-b rounded-l">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                                     </div>
-                                    <input type="text" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Actual Price">
+                                    <input type="text" v-model="price" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Actual Price">
                                 </div>
                             </div>
                             <!-- End price -->
@@ -86,7 +86,7 @@
                                     <div class="w-12 z-10 text-center pointer-events-none flex items-center justify-center border-l border-t border-b rounded-l">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                                     </div>
-                                    <input type="text" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Sales Price">
+                                    <input type="text" v-model="sales_price" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Sales Price">
                                 </div>
                             </div>
                             <!-- End sale price -->
@@ -360,15 +360,7 @@
     {
         name: "MainContents",
         components: { TopNavBar },
-        data()
-        {
-            return {
-                specifications: [],
-                overviews: [],
-                files: []
-            }
-        },
-
+        data() { return { name: "", quantity: "", sales_price: "", price: "", description: "", categories: [ { "type" : "Category", "category_id" : "75" }, { "type" : "Category", "category_id" : "76" }, { "type" : "Category", "category_id" : "78" }, ], specifications: [], overviews: [], files: [] } },
         methods :
         {
             addSpecification()
