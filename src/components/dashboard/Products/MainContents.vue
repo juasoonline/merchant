@@ -29,7 +29,9 @@
         <!-- End content header -->
 
         <section class="p-6">
-            {{ products }}
+            <div class="container">
+                <pre>{{ products }}</pre>
+            </div>
         </section>
 
     </div>
