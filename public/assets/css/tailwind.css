@@ -12,3 +12,7 @@
 .btn-juaso-primary { @apply inline-block px-7 py-2 text-xs font-medium leading-4 text-center text-white transition bg-juaso-primary rounded shadow hover:bg-juaso-secondary; }
 .btn-juaso-secondary { @apply inline-block px-7 py-2 text-xs font-medium leading-4 text-center text-white transition bg-juaso-primary rounded shadow hover:bg-juaso-secondary; }
 .btn-juaso { @apply inline-block px-7 py-2 text-xs font-medium leading-4 text-center text-gray-500 transition border border-blue-900 rounded }
+
+.wizard-active { @apply text-juaso-primary border-b-2 pb-3 border-blue-800; }
+.wizard-pending { @apply text-gray-500 border-b-2 pb-3 border-gray-200 }
+.wizard-success { @apply border-b-2 pb-3 border-green-600 text-green-600 }

@@ -27,7 +27,7 @@
 <script>
     import TopBar from "@/components/main/Shared/TopBar";
     import MainNav from "@/components/main/Shared/MainNav";
-    import MainContents from "@/components/main/About/MainContents";
+    import MainContents from "@/components/main/Join/MainContents";
     import MainFooter from "@/components/main/Shared/MainFooter";
 
     export default

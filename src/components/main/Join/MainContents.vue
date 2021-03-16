@@ -1,21 +1,17 @@
 <template>
 
-    <!-- Begin contents -->
-    <section class="py-20">
-        <div class="container m-auto h-screen">
-
-            Contents coming soon
-
-        </div>
-    </section>
-    <!-- End contents -->
+    <!-- Begin form section -->
+    <join-form></join-form>
+    <!-- End form section -->
 
 </template>
 
 <script>
+    import JoinForm from "@/components/main/Join/JoinForm";
     export default
     {
         name: "MainContents",
+        components: { JoinForm },
     }
 </script>
 

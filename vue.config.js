@@ -3,6 +3,6 @@ module.exports =
     devServer:
     {
         host: 'business.juasoonline.test',
-        port: '5000'
+        port: '5000',
     }
 };

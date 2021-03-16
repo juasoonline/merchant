@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 import axios from "axios";
-axios.defaults.baseURL = "http://products.juasoonline.test/";
+axios.defaults.baseURL = "http://api.juasoonline.test/web/";
 
 import '../public/assets/css/tailwind.css'
 

@@ -134,13 +134,12 @@
     export default
     {
         name: "LeftBar",
-
         data()
         {
             return {
-                mainLogo: './assets/img/logo.png',
-                userIconMale: './assets/img/user-icon-male.png',
-                userIconFemale: './assets/img/user-icon-female.png',
+                mainLogo: '../assets/img/logo.png',
+                userIconMale: '../assets/img/user-icon-male.png',
+                userIconFemale: '../assets/img/user-icon-female.png',
             }
         }
     }
