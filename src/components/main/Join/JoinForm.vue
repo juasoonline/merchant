@@ -339,7 +339,7 @@
                     .catch( error => { console.log( error.response ); } )
             }
             const createAdmin = () => {
-                axios( { method: 'POST', url: 'administrators', headers: {}, data: { data: { type: "StoreAdministrator", attributes: { first_name: storeAdminInfo.value.first_name, other_names: storeAdminInfo.value.other_names, last_name: storeAdminInfo.value.last_name, designation: storeAdminInfo.value.designation, email: storeAdminInfo.value.email, mobile_phone: storeAdminInfo.value.mobile_phone, office_phone: storeAdminInfo.value.office_phone }, relationships: { store: { store_id: storeAdminInfo.value.store_id } } } } })
+                axios( { method: 'POST', url: 'administrators', headers: {}, data: { data: { type: "StoreAdministrator", attributes: { first_name: storeAdminInfo.value.first_name, other_names: storeAdminInfo.value.other_names, last_name: storeAdminInfo.value.last_name, designation: storeAdminInfo.value.designation, mobile_phone: storeAdminInfo.value.mobile_phone, office_phone: storeAdminInfo.value.office_phone, email: storeAdminInfo.value.email, password: storeAdminInfo.value.password, password_confirmation: storeAdminInfo.value.password_confirmation,  }, relationships: { store: { store_id: storeAdminInfo.value.store_id } } } } })
                     .then( response => { if ( response.data.status === "Success" ){ storeAdminInfo.value.shop_id = response.data.id; step2.value.status = true; step2.value.class = "wizard-success"; step3.value.class = "wizard-success" } else { console.log( "Error occurred" ) } } )
                     .catch( error => { console.log( error.response ); } )
             }
