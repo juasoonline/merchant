@@ -46,7 +46,8 @@
             <div class="mt-6">
                 <div class="flex mt-3">
                     <button type="submit" class="rounded bg-juaso-primary text-white font-bold px-3 py-2 w-full focus:outline-none hover:bg-juaso-secondary">
-                      Login <span><loader>Loading...</loader></span>
+                        <span v-if="loader.isLoading === false">Login</span>
+                        <span v-else><moon-loader :loading="loader.loading" :color="loader.color" :size="loader.size"></moon-loader></span>
                     </button>
                 </div>
             </div>
@@ -60,27 +61,28 @@
 <script>
     import { reactive, inject } from 'vue';
     import router from "@/router";
-    import Loader from "@/components/dashboard/Shared/Loader";
+    import MoonLoader from 'vue-spinner/src/PulseLoader.vue'
 
     export default
     {
         name: "LoginForm",
-        components: { Loader },
+        components: { MoonLoader },
         setup()
         {
             const loginData = reactive({  loginData: { email: "", password: "" } })
+            const loader = reactive({ color: '#FFFFFF', size: '11px', loading: true, isLoading: false })
             const authentication = inject( 'authentication' );
 
             const signIn = () =>
             {
-                authentication.loginUser( loginData ).then(() => { router.replace('/dashboard'); }).catch(() => { alert( "Login Failed" ) })
+                loader.isLoading = true
+                authentication.loginUser( loginData ).then(() => { router.replace('/dashboard'); }).catch(() => { loader.isLoading = false; alert( "Login Failed" ) })
             }
 
-            return { loginData, authentication, signIn }
+            return { loginData, authentication, signIn, loader }
         }
     }
 </script>
 
 <style scoped>
-
 </style>
