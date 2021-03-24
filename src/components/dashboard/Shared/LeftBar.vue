@@ -7,47 +7,28 @@
             <!--Begin logo-->
             <div class="border-b border-gray-100 m-7">
                 <router-link to="/dashboard" class="focus:outline-none">
-                    <img :src="mainLogo" alt="" class="w-24 pb-4">
+                    <img :src="files.mainLogo" alt="" class="w-24 pb-4">
                 </router-link>
             </div>
             <!--End logo-->
 
             <!-- Begin user info -->
-            <div class="border-b border-gray-100 m-7 pb-7 flex justify-between items-center">
+            <div class="border-b border-gray-100 m-7 pb-7 flex">
 
                 <!-- Begin user icon -->
-                <div class="">
+                <div class="mr-4">
                     <div class="rounded-full">
-                        <img :src="userIconMale" alt="" class="w-10">
+                        <img :src="files.userIconMale" alt="" class="w-10">
                     </div>
                 </div>
                 <!-- End user icon -->
 
                 <!-- Begin user name/role -->
                 <div class="">
-                    <h3 class="text-sm font-bold">Michael Kabutey</h3>
-                    <p class="text-xs">Store Administrator</p>
+                    <h3 class="text-sm font-bold">{{ authentication.state.user.first_name }} {{ authentication.state.user.last_name }}</h3>
+                    <p class="text-xs">{{ authentication.state.user.designation }}</p>
                 </div>
                 <!-- End user name/role -->
-
-                <!-- Begin drop icon -->
-                <div class="text-xs dropMenu group">
-                    <div class="bg-juaso-primary p-1 rounded hover:bg-juaso-secondary cursor-pointer">
-                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="z-50 bg-white shadow-lg rounded right-7 w-52 mt-1 transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top">
-                        <div class="text-juaso-primary font-bold pt-5 px-2.5 text-center">Welcome to Juasoonline</div>
-                        <div class="m-auto flex pt-5 px-2.5 pb-3 border-b justify-center">
-                            <router-link to="/register" class="justify-start inline-block mr-1 px-7 py-1 text-xs font-medium leading-4 text-center text-white transition bg-juaso-primary rounded shadow ripple hover:bg-juaso-secondary">Join</router-link>
-                            <router-link to="/login" class="justify-end inline-block ml-1 px-7 py-1 text-xs font-medium leading-4 text-center text-white transition bg-juaso-secondary rounded shadow ripple hover:bg-juaso-primary">Login</router-link>
-                        </div>
-                        <ul class="w-full dropMenu text-gray-600">
-                            <li class="px-3 py-1.5 hover:bg-juaso-secondary"><router-link to="/stores" class="flex hover:text-white hover:border-gray-600">My Favorite Stores</router-link></li>
-                            <li class="px-3 py-1.5 hover:bg-juaso-secondary"><router-link to="/coupons" class="flex hover:text-white hover:border-gray-600">My Coupons</router-link></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End drop icon -->
 
             </div>
             <!-- End user info -->
@@ -67,7 +48,7 @@
                 </div>
                 <!-- End dashboard nav -->
 
-                <!-- Begin store nav -->
+                <!-- Begin index nav -->
                 <div class="mb-5">
                     <h2 class="font-light text-xs px-7 pb-3 uppercase">Store</h2>
                     <div class="hover:bg-blue-50 px-7 py-3">
@@ -101,7 +82,7 @@
                         </router-link>
                     </div>
                 </div>
-                <!-- End store nav -->
+                <!-- End index nav -->
 
                 <!-- Begin help and support nav -->
                 <div class="mb-5">
@@ -131,17 +112,17 @@
 </template>
 
 <script>
+    import { ref, inject } from 'vue'
     export default
     {
         name: "LeftBar",
-        data()
+        setup()
         {
-            return {
-                mainLogo: '../assets/img/logo.png',
-                userIconMale: '../assets/img/user-icon-male.png',
-                userIconFemale: '../assets/img/user-icon-female.png',
-            }
-        }
+            const files = ref ({ mainLogo: '../assets/img/logo.png', userIconMale: '../assets/img/user-icon-male.png' })
+            const authentication = inject( 'authentication' );
+
+            return { files, authentication }
+        },
     }
 </script>
 

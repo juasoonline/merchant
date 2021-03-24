@@ -168,7 +168,7 @@
                   </div>
                   <!-- End business info form -->
 
-                  <!-- Begin store admin info form -->
+                  <!-- Begin index admin info form -->
                   <div v-else-if="step2.status === false" class="px-5 mb-5">
                       <form class="text-xs" @submit.prevent="createAdmin">
 
@@ -290,7 +290,7 @@
 
                       </form>
                   </div>
-                  <!-- End store admin info form -->
+                  <!-- End index admin info form -->
 
                   <!-- Begin success info -->
                   <div v-else class="p-10">
@@ -329,9 +329,9 @@
         {
             const businessInfo    = ref({ store_name: "", region: "", city: "", address: "", postal_code: "", mobile_phone: "", other_phone: "", email: "", website: "" } )
             const storeAdminInfo  = ref({ store_id: "", first_name: "", other_names: "", last_name: "", designation: "", mobile_phone: "", office_phone: "", email: "", password: "", password_confirmation: "" } )
-            const step1           = ref( { status: false, class: "wizard-active" }  );
-            const step2           = ref( { status: false, class: "wizard-pending" }  );
-            const step3           = ref( { status: false, class: "wizard-pending" }  );
+            const step1           = ref( { status: false, class: "wizard-active" }  )
+            const step2           = ref( { status: false, class: "wizard-pending" }  )
+            const step3           = ref( { status: false, class: "wizard-pending" }  )
 
             const createBusiness = () => {
                 axios( { method: 'POST', url: 'stores', headers: {}, data: { data: { type: "Store", attributes: { store_name: businessInfo.value.store_name, region: businessInfo.value.region, city: businessInfo.value.city, address: businessInfo.value.address, postal_code: businessInfo.value.postal_code, mobile_phone: businessInfo.value.mobile_phone, other_phone: businessInfo.value.other_phone, email: businessInfo.value.email, website: businessInfo.value.website } } } })

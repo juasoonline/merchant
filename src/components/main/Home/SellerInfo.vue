@@ -7,7 +7,7 @@
             <!-- Begin header -->
             <div class="m-auto text-center w-1/2">
                 <h2 class="text-gray-600 text-2xl">Enter Our Platform As a Seller</h2>
-                <div class="font-bold text-gray-900 text-4xl leading-10 my-10">Set up your e-commerce store in a flash, it's easy and free!</div>
+                <div class="font-bold text-gray-900 text-4xl leading-10 my-10">Set up your e-commerce index in a flash, it's easy and free!</div>
             </div>
             <!-- End header -->
 
@@ -75,7 +75,7 @@
 
             <!-- Begin call to action -->
             <div class="m-auto text-center w-1/2 my-10">
-                <div class="font-bold text-gray-700 text-4xl uppercase my-10">Thousands of shoppers are waiting to visit your store</div>
+                <div class="font-bold text-gray-700 text-4xl uppercase my-10">Thousands of shoppers are waiting to visit your index</div>
                 <router-link to="/wishlist" class="inline-block px-10 py-1 text-4xl font-medium text-center text-white transition bg-juaso-primary rounded shadow hover:bg-juaso-secondary">Join Juasoonline</router-link>
             </div>
             <!-- End call to action -->

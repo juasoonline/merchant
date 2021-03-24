@@ -6,7 +6,18 @@
 
 </template>
 
-<script></script>
+<script>
+    import { provide } from 'vue'
+    import authentication from '@/store/authentication'
+
+    export default
+    {
+        setup()
+        {
+            provide('authentication', authentication )
+        }
+    }
+</script>
 
 <style lang="scss">
 </style>
