@@ -1,7 +1,7 @@
-import {reactive,watchEffect} from 'vue'
+import { reactive,watchEffect,readonly } from 'vue'
 import axios from "axios";
 
-const state = reactive({ user: {}, authenticated: false } );
+const state = reactive({ user: {}, token: {}, authenticated: false } );
 
 const loginUser = async ( credentials ) =>
 {
@@ -12,8 +12,8 @@ const validateToken = async ( token, resource ) =>
 {
     try
     {
-        let response = await axios({ method: 'GET', url: 'stores/administrator/' + resource, headers: { 'Authorization': 'Bearer ' + token } });
-        storeData( token, response.data.data.attributes )
+        let response = await axios({ method: 'GET', url: 'stores/administrator/' + resource + '?include=store', headers: { 'Authorization': 'Bearer ' + token } });
+        storeData( token, response.data.data )
     }
     catch ( exception )
     {
@@ -27,6 +27,8 @@ const storeData = ( token, user ) =>
     localStorage.setItem( 'user', JSON.stringify( user ) )
 
     state.user = JSON.parse( localStorage.getItem('user' ) )
+    state.token = localStorage.getItem('token' )
+
     return isAuthenticated()
 }
 const isAuthenticated = () =>
@@ -54,7 +56,8 @@ const logoutUser = () =>
 }
 watchEffect(() =>
 {
-    state.user
+    state.user = JSON.parse( localStorage.getItem('user' ) )
+    state.token = localStorage.getItem('token' )
 });
 
-export default { state, loginUser, logoutUser, isAuthenticated }
+export default { state: readonly(state), loginUser, logoutUser, isAuthenticated }

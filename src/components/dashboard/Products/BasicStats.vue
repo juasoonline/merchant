@@ -5,7 +5,7 @@
         <div class="bg-white shadow rounded text-gray-600">
 
             <!-- Begin heading -->
-            <div class="font-bold text-lg px-5 py-3">Monthly Overview</div>
+            <div class="font-bold text-lg px-5 py-3">Products Overview</div>
             <!-- End heading -->
 
             <hr class="border-gray-100">

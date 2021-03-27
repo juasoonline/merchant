@@ -25,8 +25,8 @@
 
                 <!-- Begin user name/role -->
                 <div class="">
-                    <h3 class="text-sm font-bold">{{ authentication.state.user.first_name }} {{ authentication.state.user.last_name }}</h3>
-                    <p class="text-xs">{{ authentication.state.user.designation }}</p>
+                    <h3 class="text-sm font-bold">{{ authentication.state.user.attributes.first_name }} {{ authentication.state.user.attributes.last_name }}</h3>
+                    <p class="text-xs">{{ authentication.state.user.attributes.designation }}</p>
                 </div>
                 <!-- End user name/role -->
 
@@ -122,7 +122,7 @@
             const authentication = inject( 'authentication' );
 
             return { files, authentication }
-        },
+        }
     }
 </script>
 

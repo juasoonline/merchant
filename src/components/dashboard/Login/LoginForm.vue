@@ -53,6 +53,12 @@
             </div>
             <!-- End submit button -->
 
+            <!-- Begin register link -->
+            <div class="mt-2 text-center text-xs">
+                Don't have an account yet? <router-link to="/join" class="text-juaso-primary hover:text-juaso-secondary">Join Here</router-link>
+            </div>
+            <!-- End register link -->
+
         </div>
     </form>
 
@@ -76,7 +82,7 @@
             const signIn = () =>
             {
                 loader.isLoading = true
-                authentication.loginUser( loginData ).then(() => { router.replace('/dashboard'); }).catch(() => { loader.isLoading = false; alert( "Login Failed" ) })
+                authentication.loginUser( loginData ).then(() => { router.replace('/dashboard' ); }).catch(() => { loader.isLoading = false; alert( "Login Failed" ) })
             }
 
             return { loginData, authentication, signIn, loader }
