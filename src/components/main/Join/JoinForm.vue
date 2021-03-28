@@ -384,6 +384,7 @@
                         step3.value.class = "wizard-success";
                         notification.success({ position: { x: 'right', y: 'top', }, message: '<b class="text-xs leading-3">SUCCESS!</b><p class="text-xxs leading-4">Registration completed. We will respond with 72 hours.</p>', duration: 10000, ripple: false, dismissible: true })
                         loader.isLoading = false
+                        console.log( response )
                     }
                     else
                     {
