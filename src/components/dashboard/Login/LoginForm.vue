@@ -65,8 +65,10 @@
 </template>
 
 <script>
+    import { Notyf } from 'notyf';
     import { reactive, inject } from 'vue';
     import router from "@/router";
+
     import MoonLoader from 'vue-spinner/src/PulseLoader.vue'
 
     export default
@@ -75,14 +77,23 @@
         components: { MoonLoader },
         setup()
         {
+            const notification = new Notyf();
+            const authentication = inject( 'authentication' );
+
             const loginData = reactive({  loginData: { email: "", password: "" } })
             const loader = reactive({ color: '#FFFFFF', size: '11px', loading: true, isLoading: false })
-            const authentication = inject( 'authentication' );
 
             const signIn = () =>
             {
                 loader.isLoading = true
-                authentication.loginUser( loginData ).then(() => { router.replace('/dashboard' ); }).catch(() => { loader.isLoading = false; alert( "Login Failed" ) })
+                authentication.loginUser( loginData ).then(() =>
+                {
+                    router.replace('/dashboard' );
+                }).catch(() =>
+                {
+                    loader.isLoading = false;
+                    notification.error({ position: { x: 'right', y: 'top', }, message: '<b class="text-xs leading-3">ERROR!</b><p class="text-xxs leading-4">Email or password is incorrect</p>', duration: 8000, ripple: false, dismissible: true })
+                })
             }
 
             return { loginData, authentication, signIn, loader }
