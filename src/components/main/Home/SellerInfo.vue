@@ -1,7 +1,7 @@
 <template>
 
     <!-- Begin seller info -->
-    <section class="bg-gray-100" style="background-image: url('./assets/img/backgrounds/shopping-bg.webp'); background-size: contain;">
+    <section class="bg-gray-100" style="background-image: url('.../assets/img/backgrounds/shopping-bg.webp'); background-size: contain;">
         <div class="container m-auto py-20">
 
             <!-- Begin header -->

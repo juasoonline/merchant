@@ -177,9 +177,9 @@
         data()
         {
             return {
-                PlayStoreLogo: './assets/img/icon-googleplay.png',
-                AppStoreLogo: './assets/img/icon-appstore.png',
-                LogoFooter: './assets/img/logo-footer.png',
+                PlayStoreLogo: '../assets/img/icon-googleplay.png',
+                AppStoreLogo: '../assets/img/icon-appstore.png',
+                LogoFooter: '../assets/img/logo-footer.png',
             }
         }
     }

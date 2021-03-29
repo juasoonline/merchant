@@ -31,9 +31,9 @@
             return {
               AdBanners:
               [
-                  { resource_id: 10000000, image: "./assets/img/sliders/1.jpg", desc: "Something" },
-                  { resource_id: 20000000, image: "./assets/img/sliders/2.jpg", desc: "Something" },
-                  { resource_id: 30000000, image: "./assets/img/sliders/3.jpg", desc: "Something" },
+                  { resource_id: 10000000, image: "../assets/img/sliders/1.jpg", desc: "Something" },
+                  { resource_id: 20000000, image: "../assets/img/sliders/2.jpg", desc: "Something" },
+                  { resource_id: 30000000, image: "../assets/img/sliders/3.jpg", desc: "Something" },
               ],
             }
         },
