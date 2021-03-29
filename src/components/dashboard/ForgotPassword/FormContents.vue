@@ -18,7 +18,7 @@
 
                     <!-- Begin form -->
                     <div>
-                        <form @submit.prevent="signIn">
+                        <form @submit.prevent="getPassword">
                             <div class="mt-6 text-sm">
 
                                 <!-- Begin email -->
@@ -36,7 +36,7 @@
                                 <!-- Begin remember password -->
                                 <div class="mt-6">
                                     <div class="flex">
-                                        <div class="select-none"><p class="text-xs text-gray-400">Remember password? <router-link to="/login">Login</router-link></p></div>
+                                        <div class="select-none"><p class="text-xs text-gray-400">Remember password? <router-link to="/login" class="text-juaso-primary hover:text-juaso-secondary">Login</router-link></p></div>
                                     </div>
                                 </div>
                                 <!-- Begin remember password -->
@@ -44,7 +44,7 @@
                                 <!-- Begin submit button -->
                                 <div class="mt-6">
                                     <div class="flex mt-3">
-                                        <button type="button" @click="signIn" class="rounded bg-juaso-primary text-white font-bold px-3 py-2 w-full focus:outline-none hover:bg-juaso-secondary">Get New Password</button>
+                                        <button type="button" @click="getPassword" class="rounded bg-juaso-primary text-white font-bold px-3 py-2 w-full focus:outline-none hover:bg-juaso-secondary">Get New Password</button>
                                     </div>
                                 </div>
                                 <!-- End submit button -->
@@ -58,7 +58,7 @@
                 <!-- End form contents -->
 
                 <!-- Begin login info -->
-                <div class="bg-gray-100 w-full bg-opacity-50 rounded-r" style="background-image: url('../assets/img/backgrounds/login-bg.jpg'); background-size: cover;">
+                <div class="bg-gray-100 w-full bg-opacity-50 rounded-r" style="background-image: url('../assets/images/backgrounds/login-bg.jpg'); background-size: cover;">
                 </div>
                 <!-- End login info -->
 
@@ -73,20 +73,12 @@
     export default
     {
         name: "FormContents",
-
-        data()
+        setup()
         {
-            return {
-                mainLogo: '../assets/images/logo.png',
-            }
-        },
+            const mainLogo = '../assets/images/logo.png'
+            const getPassword = () => {}
 
-        methods :
-        {
-            signIn()
-            {
-                this.$router.push('/dashboard');
-            }
+            return { mainLogo, getPassword }
         }
     }
 </script>

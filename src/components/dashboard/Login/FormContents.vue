@@ -24,7 +24,7 @@
                 <!-- End form contents -->
 
                 <!-- Begin login info -->
-                <div class="bg-gray-100 w-full bg-opacity-50 rounded-r" style="background-image: url('../assets/img/backgrounds/login-bg.jpg'); background-size: cover;">
+                <div class="bg-gray-100 w-full bg-opacity-50 rounded-r" style="background-image: url('../assets/images/backgrounds/login-bg.jpg'); background-size: cover;">
                 </div>
                 <!-- End login info -->
 
