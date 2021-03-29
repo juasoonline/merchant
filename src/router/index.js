@@ -1,11 +1,10 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/main/Home.vue'
+import { createRouter, createWebHistory } from 'vue-router'
 import authentication from "@/store/authentication";
 
 const routes =
 [
     // Main site routes
-    { path: '/',                        name: 'Home',               component: Home },
+    { path: '/',                        name: 'Home',               component: () => import( '../views/main/Home.vue' ) },
     { path: '/about',                   name: 'About',              component: () => import( '../views/main/About.vue' ) },
     { path: '/about',                   name: 'About',              component: () => import( '../views/main/About') },
     { path: '/news',                    name: 'News',               component: () => import( '../views/main/News') },
@@ -28,9 +27,8 @@ const routes =
 ]
 
 const router = createRouter({
-    // history: createWebHashHistory( process.env.BASE_URL ),
-    history: createWebHashHistory(),
-    routes
+    routes,
+    history: createWebHistory(),
 })
 
 export default router
