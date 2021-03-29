@@ -18,10 +18,11 @@
                 <div class="border border-gray-200 rounded">
 
                     <!-- Begin steps -->
-                    <div class="flex grid grid-cols-3 justify-between text-center my-5">
+                    <div class="flex grid grid-cols-4 justify-between text-center my-5">
                         <div :class="step1.class"><h3 class="font-bold">Step 1</h3><p class="text-xs">Business information</p></div>
-                        <div :class="step2.class"><h3 class="font-bold">Step 2</h3><p class="text-xs">Store Administrator information</p></div>
-                        <div :class="step3.class"><h3 class="font-bold">Step 3</h3><p class="text-xs">Application Review</p></div>
+                        <div :class="step2.class"><h3 class="font-bold">Step 2</h3><p class="text-xs">Administrator information</p></div>
+                        <div :class="step3.class"><h3 class="font-bold">Step 3</h3><p class="text-xs">Email Verification</p></div>
+                        <div :class="step3.class"><h3 class="font-bold">Step 4</h3><p class="text-xs">Confirmation</p></div>
                     </div>
                     <!-- End steps -->
 
@@ -339,16 +340,16 @@
             const notification = new Notyf();
             const loader = reactive({ color: '#FFFFFF', size: '11px', loading: true, isLoading: false })
 
-            const businessInfo    = ref({ store_name: "", region: "", city: "", address: "", postal_code: "", mobile_phone: "", other_phone: "", email: "", website: "" } )
-            const storeAdminInfo  = ref({ store_id: "", first_name: "", other_names: "", last_name: "", designation: "", mobile_phone: "", office_phone: "", email: "", password: "", password_confirmation: "" } )
+            const businessInfo    = ref({ store_name: "", region: "", city: "", address: "", postal_code: "", mobile_phone: "", other_phone: "", email: "", website: "" })
+            const storeAdminInfo  = ref({ store_id: "", first_name: "", other_names: "", last_name: "", designation: "", mobile_phone: "", office_phone: "", email: "", password: "", password_confirmation: "" })
 
-            const step1           = ref( { status: false, class: "wizard-active" }  )
-            const step2           = ref( { status: false, class: "wizard-pending" }  )
-            const step3           = ref( { status: false, class: "wizard-pending" }  )
+            const step1           = ref({ status: false, class: "wizard-active" })
+            const step2           = ref({ status: false, class: "wizard-pending" })
+            const step3           = ref({ status: false, class: "wizard-pending" })
 
-            const createBusiness = () => {
+            const createBusiness = () =>
+            {
                 loader.isLoading = true
-
                 axios( { method: 'POST', url: 'stores', headers: {}, data: { data: { type: "Store", attributes: { store_name: businessInfo.value.store_name, region: businessInfo.value.region, city: businessInfo.value.city, address: businessInfo.value.address, postal_code: businessInfo.value.postal_code, mobile_phone: businessInfo.value.mobile_phone, other_phone: businessInfo.value.other_phone, email: businessInfo.value.email, website: businessInfo.value.website } } } })
                     .then( response => {
                     if ( response.data.status === "Success" )
@@ -359,6 +360,7 @@
                         step2.value.class = "wizard-active";
                         notification.success({ position: { x: 'right', y: 'top', }, message: '<b class="text-xs leading-3">SUCCESS!</b><p class="text-xxs leading-4">Business information accept. Proceed with store administration information</p>', duration: 10000, ripple: false, dismissible: true })
                         loader.isLoading = false
+                        console.log( response.data );
                     }
                     else
                     {
@@ -372,7 +374,8 @@
                         console.log( error.response );
                     })
             }
-            const createAdmin = () => {
+            const createAdmin = () =>
+            {
                 loader.isLoading = true
                 axios( { method: 'POST', url: 'stores/administrator', headers: {}, data: { data: { type: "StoreAdministrator", attributes: { first_name: storeAdminInfo.value.first_name, other_names: storeAdminInfo.value.other_names, last_name: storeAdminInfo.value.last_name, designation: storeAdminInfo.value.designation, mobile_phone: storeAdminInfo.value.mobile_phone, office_phone: storeAdminInfo.value.office_phone, email: storeAdminInfo.value.email, password: storeAdminInfo.value.password, password_confirmation: storeAdminInfo.value.password_confirmation,  }, relationships: { store: { store_id: storeAdminInfo.value.store_id } } } } })
                     .then( response => {
@@ -390,6 +393,7 @@
                     {
                         loader.isLoading = false;
                         notification.error({ position: { x: 'right', y: 'top', }, message: '<b class="text-xs leading-3">ERROR!</b><p class="text-xxs leading-4">Something went wrong. Try again later</p>', duration: 10000, ripple: false, dismissible: true })
+                        console.log( response )
                     }})
                     .catch( error =>
                     {
