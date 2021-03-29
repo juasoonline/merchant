@@ -118,7 +118,7 @@
         name: "LeftBar",
         setup()
         {
-            const files = ref ({ mainLogo: '../assets/img/logo.png', userIconMale: '../assets/img/user-icon-male.png' })
+            const files = ref ({ mainLogo: '../assets/images/logo.png', userIconMale: '../assets/images/user-icon-male.png' })
             const authentication = inject( 'authentication' );
 
             return { files, authentication }

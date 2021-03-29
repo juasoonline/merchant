@@ -37,7 +37,7 @@
         data()
         {
             return {
-                mainLogo: '../assets/img/logo.png',
+                mainLogo: '../assets/images/logo.png',
             }
         }
     }

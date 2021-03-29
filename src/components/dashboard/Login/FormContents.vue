@@ -43,7 +43,7 @@
         components: { LoginForm },
         setup()
         {
-            const mainLogo = '../assets/img/logo.png'
+            const mainLogo = '../assets/images/logo.png'
             return { mainLogo }
         },
     }

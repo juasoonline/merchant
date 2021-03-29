@@ -142,7 +142,7 @@
         name: "TopNavBar",
         setup()
         {
-            const files = ref ({ userIconMale: '../assets/img/user-icon-male.png' })
+            const files = ref ({ userIconMale: '../assets/images/user-icon-male.png' })
             const authentication = inject( 'authentication' );
 
             const signOut = () =>
