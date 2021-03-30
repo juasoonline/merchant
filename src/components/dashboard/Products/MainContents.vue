@@ -32,6 +32,10 @@
         <basic-stats></basic-stats>
         <!-- End basic stats -->
 
+        <!-- Begin product list -->
+        <products-table></products-table>
+        <!-- End product list -->
+
     </div>
     <!-- End main contents -->
 
@@ -40,11 +44,12 @@
 <script>
     import TopNavBar from "@/components/dashboard/Shared/TopNavBar";
     import BasicStats from "@/components/dashboard/Products/BasicStats";
+    import ProductsTable from "@/components/dashboard/Products/ProductsTable";
 
     export default
     {
         name: "MainContents",
-        components: { TopNavBar, BasicStats },
+        components: { TopNavBar, BasicStats, ProductsTable },
     }
 </script>
 
