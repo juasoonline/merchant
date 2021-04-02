@@ -20,7 +20,7 @@
 
 <script>
     import LeftBar from "@/components/dashboard/Shared/LeftBar";
-    import MainContents from "@/components/dashboard/AddProduct/MainContents";
+    import MainContents from "@/components/dashboard/CreateProduct/MainContents";
 
     export default
     {

@@ -1,4 +1,4 @@
-import { reactive,watchEffect,readonly } from 'vue'
+import { reactive, watchEffect, readonly } from 'vue'
 import axios from "axios";
 
 const state = reactive({ user: {}, token: {}, authenticated: false } );

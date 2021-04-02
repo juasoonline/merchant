@@ -44,7 +44,7 @@
 
 <script>
     import TopNavBar from "@/components/dashboard/Shared/TopNavBar";
-    import CreateProductForm from "@/components/dashboard/AddProduct/CreateProductForm";
+    import CreateProductForm from "@/components/dashboard/CreateProduct/CreateProductForm";
 
     export default
     {

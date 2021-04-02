@@ -34,7 +34,7 @@
 
             onBeforeMount(() =>
             {
-                axios( { method: 'GET', url: 'products/' + route.params.product, headers: { 'Authorization': 'Bearer ' + authentication.state.token } } )
+                axios( { method: 'GET', url: 'products/' + route.params.product + '?include=categories,specifications,overviews,reviews,images', headers: { 'Authorization': 'Bearer ' + authentication.state.token } } )
                     .then( response => {
                         if ( response.data.code === 200 || response.data.status === "Success" ){ product.product = response.data.data }
                         else { router.replace('/404' ) }
