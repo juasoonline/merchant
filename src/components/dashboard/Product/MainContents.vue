@@ -7,42 +7,36 @@
         <top-nav-bar></top-nav-bar>
         <!-- End top navbar section -->
 
+        <!-- Begin main contents -->
+        <main class="p-6">
+            <div class="flex grid grid-cols-12 gap-5">
+
+                <!-- Begin left section -->
+                <left-content></left-content>
+                <!-- End left section -->
+
+                <!-- Begin right section -->
+                <right-content></right-content>
+                <!-- End right section -->
+
+            </div>
+        </main>
+        <!-- End main contents -->
+
     </div>
     <!-- End main contents -->
 
 </template>
 
 <script>
-    import { inject, reactive } from 'vue';
-    import { useRoute } from 'vue-router'
-
     import TopNavBar from "@/components/dashboard/Shared/TopNavBar";
-    import { onBeforeMount } from 'vue'
-    import axios from "axios";
-    import router from "@/router";
+    import LeftContent from "@/components/dashboard/Product/LeftContent";
+    import RightContent from "@/components/dashboard/Product/RightContent";
 
     export default
     {
         name: "MainContents",
-        components: { TopNavBar },
-
-        setup()
-        {
-            const authentication = inject( 'authentication' )
-            const product = reactive({ product: null })
-            const route = useRoute()
-
-            onBeforeMount(() =>
-            {
-                axios( { method: 'GET', url: 'products/' + route.params.product + '?include=categories,specifications,overviews,reviews,images', headers: { 'Authorization': 'Bearer ' + authentication.state.token } } )
-                    .then( response => {
-                        if ( response.data.code === 200 || response.data.status === "Success" ){ product.product = response.data.data }
-                        else { router.replace('/404' ) }
-                    })
-                    .catch( error => { console.log( error.response ); } )
-            })
-            return { product }
-        }
+        components: { TopNavBar, LeftContent, RightContent },
     }
 </script>
 

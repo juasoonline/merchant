@@ -360,7 +360,6 @@
                         step2.value.class = "wizard-active";
                         notification.success({ position: { x: 'right', y: 'top', }, message: '<b class="text-xs leading-3">SUCCESS!</b><p class="text-xxs leading-4">Business information accept. Proceed with store administration information</p>', duration: 10000, ripple: false, dismissible: true })
                         loader.isLoading = false
-                        console.log( response.data );
                     }
                     else
                     {
@@ -385,9 +384,8 @@
                         step2.value.status = true;
                         step2.value.class = "wizard-success";
                         step3.value.class = "wizard-success";
-                        notification.success({ position: { x: 'right', y: 'top', }, message: '<b class="text-xs leading-3">SUCCESS!</b><p class="text-xxs leading-4">Registration completed. We will respond with 72 hours.</p>', duration: 10000, ripple: false, dismissible: true })
+                        notification.success({ position: { x: 'right', y: 'top', }, message: '<b class="text-xs leading-3">SUCCESS!</b><p class="text-xxs leading-4">Registration completed. We will respond within 72 hours.</p>', duration: 10000, ripple: false, dismissible: true })
                         loader.isLoading = false
-                        console.log( response )
                     }
                     else
                     {

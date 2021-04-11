@@ -12,7 +12,7 @@ const validateToken = async ( token, resource ) =>
 {
     try
     {
-        let response = await axios({ method: 'GET', url: 'stores/administrator/' + resource + '?include=store', headers: { 'Authorization': 'Bearer ' + token } });
+        let response = await axios({ method: 'GET', url: 'store/administrator/' + resource + '?include=store', headers: { 'Authorization': 'Bearer ' + token } });
         storeData( token, response.data.data )
     }
     catch ( exception )
@@ -26,8 +26,8 @@ const storeData = ( token, user ) =>
     localStorage.setItem( 'token', token )
     localStorage.setItem( 'user', JSON.stringify( user ) )
 
-    state.user = JSON.parse( localStorage.getItem('user' ) )
     state.token = localStorage.getItem('token' )
+    state.user = JSON.parse( localStorage.getItem('user' ) )
 
     return isAuthenticated()
 }
@@ -51,13 +51,14 @@ const logoutUser = () =>
     return axios({ method: 'POST', url: 'stores/auth/logout', headers: { 'Authorization': 'Bearer ' + getToken() } }).then(() =>{
         localStorage.removeItem( 'token' )
         localStorage.removeItem( 'user' )
+        localStorage.removeItem( 'theStore' )
         localStorage.clear();
     })
 }
 watchEffect(() =>
 {
-    state.user = JSON.parse( localStorage.getItem('user' ) )
     state.token = localStorage.getItem('token' )
+    state.user = JSON.parse( localStorage.getItem('user' ))
 });
 
 export default { state: readonly(state), loginUser, logoutUser, isAuthenticated }

@@ -168,7 +168,7 @@
 
             const addProduct = () =>
             {
-                axios({ method: 'POST', url: 'products', headers: { 'Authorization': 'Bearer ' + authentication.state.token }, data: { data: { type: "Product", attributes: { name: product.name, quantity: product.quantity, sales_price: product.sales_price, price: product.price, description: product.description }, relationships: { store: { store_id: authentication.state.user.include.store.id }, brand: {}, categories: { data: product.categories }} } } })
+                axios({ method: 'POST', url: 'store/' + authentication.state.user.include.store.attributes.resource_id + '/products', headers: { 'Authorization': 'Bearer ' + authentication.state.token }, data: { data: { type: "Product", attributes: { name: product.name, quantity: product.quantity, sales_price: product.sales_price, price: product.price, description: product.description }, relationships: { store: { store_id: authentication.state.user.include.store.id }, brand: {}, categories: { data: product.categories }} } } })
                     .then( response =>
                     {
                         if ( response.status === 200 || response.status === 201 )
@@ -177,7 +177,7 @@
                         }
                         else
                         {
-                            //
+                            console.log( response )
                         }
                     })
                     .catch( error =>
@@ -185,7 +185,6 @@
                         console.log( error.response )
                     })
             }
-            onBeforeMount(() => { store.getCategories() })
             const checkAction = ( event ) =>
             {
                 if ( event.target.checked )
@@ -200,11 +199,12 @@
                 }
             }
 
+            onBeforeMount(() => { store.getCategories() })
+
             return { authentication, product, addProduct, store, value, options, checkAction }
         }
     }
 </script>
 
 <style src="">
-
 </style>

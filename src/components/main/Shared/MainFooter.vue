@@ -37,11 +37,11 @@
 
                     <!-- Begin links -->
                     <div class="">
-                        <router-link to="/customer-service" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Customer service</router-link>
-                        <router-link to="/seller-information" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Seller Information Center</router-link>
-                        <router-link to="/product-recalls" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Product Recalls</router-link>
-                        <router-link to="/faq" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Help & FAQs</router-link>
-                        <router-link to="/contacts" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Contact us</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Customer service</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Seller Information Center</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Product Recalls</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Help & FAQs</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Contact us</router-link>
                     </div>
                     <!-- End links -->
 
@@ -57,11 +57,11 @@
 
                     <!-- Begin links -->
                     <div class="">
-                        <router-link to="/account" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">My Account</router-link>
-                        <router-link to="/cart" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Shopping Cart</router-link>
-                        <router-link to="/wishlist" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Wish List</router-link>
-                        <router-link to="/order-history" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Order history</router-link>
-                        <router-link to="/buyer-protection" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Buyer Protection</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">My Account</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Shopping Cart</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Wish List</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Order history</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Buyer Protection</router-link>
                     </div>
                     <!-- End links -->
 
@@ -77,11 +77,11 @@
 
                     <!-- Begin links -->
                     <div class="">
-                        <router-link to="/about-juasoonline" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">About Juasoonline</router-link>
-                        <router-link to="/career" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Career Opportunities</router-link>
-                        <router-link to="/sell-on-juasoonline" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Sell Your Products</router-link>
-                        <router-link to="/blog" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Blog</router-link>
-                        <router-link to="/invest-relation" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Investor Relation</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">About Juasoonline</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Career Opportunities</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Sell Your Products</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Blog</router-link>
+                        <router-link to="/" class="my-2 block text-gray-300 hover:text-juaso-secondary text-sm font-medium duration-700">Investor Relation</router-link>
                     </div>
                     <!-- End links -->
 

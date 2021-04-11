@@ -29,6 +29,18 @@
         <basic-stats></basic-stats>
         <!-- End basic stats -->
 
+        <!-- Begin analytics -->
+        <analytics></analytics>
+        <!-- End analytics -->
+
+        <!-- Begin customers and orders -->
+        <customer-order></customer-order>
+        <!-- End customers and orders -->
+
+        <!-- Begin product list -->
+        <products-table></products-table>
+        <!-- End product list -->
+
     </div>
     <!-- Begin main contents -->
 
@@ -37,10 +49,13 @@
 <script>
     import TopNavBar from "@/components/dashboard/Shared/TopNavBar";
     import BasicStats from "@/components/dashboard/Dashboard/BasicStats";
+    import Analytics from "@/components/dashboard/Dashboard/Analytics";
+    import CustomerOrder from "@/components/dashboard/Dashboard/CustomerOrder";
+    import ProductsTable from "@/components/dashboard/Products/ProductsTable";
 
     export default
     {
         name: 'Dashboard',
-        components: { TopNavBar, BasicStats },
+        components: { TopNavBar, BasicStats, Analytics, CustomerOrder, ProductsTable },
     }
 </script>

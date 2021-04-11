@@ -1,7 +1,7 @@
 <template>
 
     <!-- Begin contents -->
-    <section class="px-6 mb-5">
+    <section class="px-6 mb-9">
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -45,8 +45,8 @@
                     <!-- End items filter -->
 
                     <!-- Begin product table list -->
-                    <div class="w-full overflow-hidden border-b border-gray-200 rounded-b">
-                        <table class="w-full divide-y divide-gray-200">
+                    <div class="overflow-hidden border-b border-gray-200 rounded-b">
+                        <table class="min-w-full divide-y divide-gray-200">
 
                             <!-- Begin table header -->
 <!--                            <thead class="bg-white border-gray-200 border-t">-->
@@ -61,7 +61,7 @@
                             <!-- End table header -->
 
                             <!-- Begin table contents -->
-                            <tbody class="w-full bg-white divide-y divide-gray-200">
+                            <tbody class="bg-white divide-y divide-gray-200">
                                 <tr v-for="product in products.products" :key="product.id" class="cursor-pointer hover:bg-gray-50">
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <router-link :to="'/product/' + product.attributes.resource_id">
@@ -156,7 +156,7 @@
                     })
                     .catch( error =>
                     {
-                        console.log( error.response );
+                        console.log( error.response )
                     })
             })
 
