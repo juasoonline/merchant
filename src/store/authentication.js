@@ -6,14 +6,15 @@ const state = reactive({ user: {}, token: {}, authenticated: false } );
 const loginUser = async ( credentials ) =>
 {
     const response = await  axios({ method: 'POST', url: 'stores/auth/login', data: { data: { type: "StoreAdministrator", attributes: { email: credentials.email, password: credentials.password } } } });
-    return await validateToken ( response.data.data.token.access_token, response.data.data.attributes.resource_id )
+    return await validateToken ( response.data.data.token.access_token, response.data.data.attributes.store_resource_id, response.data.data.attributes.resource_id )
 }
-const validateToken = async ( token, resource ) =>
+const validateToken = async ( token, admin_resource_id, store_resource_id ) =>
 {
     try
     {
-        let response = await axios({ method: 'GET', url: 'store/administrator/' + resource + '?include=store', headers: { 'Authorization': 'Bearer ' + token } });
-        storeData( token, response.data.data )
+        let response = await axios({ method: 'GET', url: 'store/' + admin_resource_id + '/administrator/' + store_resource_id + '?include=store', headers: { 'Authorization': 'Bearer ' + token } });
+        if ( response.data.status === "Error" ) { localStorage.clear(); state.authenticated = false }
+        else { storeData( token, response.data.data ) }
     }
     catch ( exception )
     {

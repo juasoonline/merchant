@@ -15,7 +15,7 @@
     {
         setup()
         {
-            provide('authentication', authentication )
+            provide( 'authentication', authentication )
             provide( 'store', store )
         }
     }

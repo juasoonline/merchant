@@ -7,7 +7,7 @@ const getCategories = () =>
 {
     axios({ method: 'GET', url: 'categories?include=subcategory', headers: { 'Authorization': 'Bearer ' + getToken() } })
         .then( response => { return createCategories( response.data.data ) } )
-        .catch( error => { console.log( error.response ) })
+        .catch( error => { error.response })
 }
 
 const createCategories = ( catsData ) =>
