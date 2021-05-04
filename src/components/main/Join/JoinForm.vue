@@ -378,6 +378,7 @@
                     {
                         loader.isLoading = false;
                         notification.error({ position: { x: 'right', y: 'top', }, message: '<b class="text-xs leading-3">ERROR!</b><p class="text-xxs leading-4">Something went wrong. Try again later</p>', duration: 10000, ripple: false, dismissible: true })
+                        console.log( response.data );
                     }})
                     .catch( error =>
                     {
