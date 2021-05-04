@@ -389,7 +389,7 @@
             const createAdmin = () =>
             {
                 loader.isLoading = true
-                axios( { method: 'POST', url: 'stores/' + storeAdminInfo.value.store_resource_id +  '/administrator', headers: {}, data: { data: { type: "StoreAdministrator", attributes: { store_resource_id: storeAdminInfo.value.store_resource_id, first_name: storeAdminInfo.value.first_name, other_names: storeAdminInfo.value.other_names, last_name: storeAdminInfo.value.last_name, designation: storeAdminInfo.value.designation, mobile_phone: storeAdminInfo.value.mobile_phone, office_phone: storeAdminInfo.value.office_phone, email: storeAdminInfo.value.email, password: storeAdminInfo.value.password, password_confirmation: storeAdminInfo.value.password_confirmation }, relationships: { store: { store_id: storeAdminInfo.value.store_id } } } } })
+                axios( { method: 'POST', url: 'store/' + storeAdminInfo.value.store_resource_id +  '/administrator', headers: {}, data: { data: { type: "StoreAdministrator", attributes: { store_resource_id: storeAdminInfo.value.store_resource_id, first_name: storeAdminInfo.value.first_name, other_names: storeAdminInfo.value.other_names, last_name: storeAdminInfo.value.last_name, designation: storeAdminInfo.value.designation, mobile_phone: storeAdminInfo.value.mobile_phone, office_phone: storeAdminInfo.value.office_phone, email: storeAdminInfo.value.email, password: storeAdminInfo.value.password, password_confirmation: storeAdminInfo.value.password_confirmation }, relationships: { store: { store_id: storeAdminInfo.value.store_id } } } } })
                     .then( response => {
                     if ( response.data.status === "Success" )
                     {
