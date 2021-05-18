@@ -17,9 +17,19 @@
                     </div>
                     <!-- Begin header -->
 
-                    <div class="text-xs">
-                        Charge: Ghs 10.00 per month
+                    <!-- Begin charge select drop -->
+                    <div class="relative inline-flex items-center text-xxs">
+                        <p class="mr-2">Charge: Ghs 10.00 per month</p>
+                        <svg class="w-2 h-2 absolute top-0 right-0 m-1.5 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232">
+                            <path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/>
+                        </svg>
+                        <select v-model="product.charge_id" class="border border-gray-300 rounded text-gray-600 h-5 pl-1 pr-2 bg-white focus:outline-none appearance-none text-xs w-32">
+                            <option selected>Select...</option>
+                            <option v-for="charge in product.charges" :key="charge.attributes.resource_id"  :value="charge.id">{{ charge.attributes.name }} => {{ charge.attributes.fee}}%</option>
+                        </select>
                     </div>
+                    <!-- End charge select drop -->
+
                 </div>
                 <!-- End header -->
 
@@ -538,7 +548,7 @@
             const authentication = inject( 'authentication' )
             const store = inject( 'store' )
 
-            const product = reactive({ product_id: null, name: "", quantity: "", price: "", sales_price: "", brand: "", description: "", categories: [], specifications: [], images: [], overviews: [], colors: [], sizes: [], allCats: [], brands: [] })
+            const product = reactive({ product_id: null, name: "", quantity: "", price: "", sales_price: "", brand: "", description: "", charge_id: "1", categories: [], specifications: [], images: [], overviews: [], colors: [], sizes: [], allCats: [], brands: [], charges: [] })
             const images = reactive({ loader: { color: '#FFFFFF', size: '11px', loading: true, isLoading: false } })
 
             const addProduct = () =>
@@ -553,6 +563,7 @@
                 formData.append('price', product.price)
                 formData.append('description', product.description)
                 formData.append('store_id', authentication.state.user.include.store.id)
+                formData.append('charge_id', product.charge_id)
 
                 // Check if product has categories
                 if ( product.categories.length !== 0 )
@@ -662,12 +673,20 @@
 
             onBeforeMount(() =>
             {
+
+                // Get categories
                 axios({ method: 'GET', url: 'categories?include=group,subcategory', headers: { 'Authorization': 'Bearer ' + authentication.state.token } })
                     .then( response => { product.allCats = response.data.data } )
                     .catch( error => { error.response })
 
+                // Get brands
                 axios({ method: 'GET', url: 'brands', headers: { 'Authorization': 'Bearer ' + authentication.state.token } })
                     .then( response => { product.brands = response.data.data } )
+                    .catch( error => { error.response })
+
+                // Get brands
+                axios({ method: 'GET', url: 'store/' + authentication.state.user.include.store.attributes.resource_id + "/charges", headers: { 'Authorization': 'Bearer ' + authentication.state.token } })
+                    .then( response => { product.charges = response.data.data } )
                     .catch( error => { error.response })
             })
 

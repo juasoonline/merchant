@@ -352,7 +352,7 @@
             const notification = new Notyf();
             const loader = reactive({ color: '#FFFFFF', size: '11px', loading: true, isLoading: false })
 
-            const businessInfo    = ref({ name: "", doing_business_as: "", region: "", city: "", address: "", postal_code: "", mobile_phone: "", other_phone: "", email: "", website: "" })
+            const businessInfo    = ref({ country_id: '1', name: "", doing_business_as: "", region: "", city: "", address: "", postal_code: "", mobile_phone: "", other_phone: "", email: "", website: "" })
             const storeAdminInfo  = ref({ store_resource_id: "", store_id: "", first_name: "", other_names: "", last_name: "", designation: "", mobile_phone: "", office_phone: "", email: "", password: "", password_confirmation: "" })
 
             const step1           = ref({ status: false, class: "wizard-active" })
@@ -362,7 +362,7 @@
             const createBusiness = () =>
             {
                 loader.isLoading = true
-                axios( { method: 'POST', url: 'stores', headers: {}, data: { data: { type: "Store", attributes: { name: businessInfo.value.name, doing_business_as: businessInfo.value.doing_business_as, region: businessInfo.value.region, city: businessInfo.value.city, address: businessInfo.value.address, postal_code: businessInfo.value.postal_code, mobile_phone: businessInfo.value.mobile_phone, other_phone: businessInfo.value.other_phone, email: businessInfo.value.email, website: businessInfo.value.website } } } })
+                axios( { method: 'POST', url: 'stores', headers: {}, data: { data: { type: "Store", attributes: { name: businessInfo.value.name, doing_business_as: businessInfo.value.doing_business_as, region: businessInfo.value.region, city: businessInfo.value.city, address: businessInfo.value.address, postal_code: businessInfo.value.postal_code, mobile_phone: businessInfo.value.mobile_phone, other_phone: businessInfo.value.other_phone, email: businessInfo.value.email, website: businessInfo.value.website }, relationships: { country: { country_id: businessInfo.value.country_id } } } } })
                     .then( response => {
                     if ( response.data.status === "Success" )
                     {
