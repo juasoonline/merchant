@@ -13,6 +13,7 @@ const validateToken = async ( token, admin_resource_id, store_resource_id ) =>
     try
     {
         let response = await axios({ method: 'GET', url: 'store/' + admin_resource_id + '/administrator/' + store_resource_id + '?include=store', headers: { 'Authorization': 'Bearer ' + token } });
+        console.log( response )
         if ( response.data.status === "Error" ) { localStorage.clear(); state.authenticated = false }
         else { storeData( token, response.data.data ) }
     }

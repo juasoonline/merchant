@@ -3,7 +3,7 @@
     <!-- Begin form contents -->
     <section class="my-40">
         <div class="container flex m-auto justify-center px-64">
-            <div class="flex grid-cols-2 bg-white rounded justify-evenly w-full">
+            <div class="flex grid-cols-2 bg-white rounded justify-evenly w-full shadow rounded">
 
                 <!-- Begin form contents -->
                 <div class="w-full p-20">
