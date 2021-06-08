@@ -10,8 +10,8 @@
 
                 <!-- Begin table -->
                 <div class="flex flex-col overflow-auto h-96">
-                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                    <div class="overflow-x-auto">
+                        <div class="py-2 align-middle inline-block min-w-full">
                             <div class="overflow-hidden border-t border-b border-gray-200">
                                 <table class="min-w-full divide-y divide-gray-200">
                                     <tbody class="bg-white divide-y divide-gray-200">
@@ -35,7 +35,7 @@
                                                 <div class="text-sm text-gray-900">Purchases</div>
                                             </td>
                                             <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">View Details</router-link>
+                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
@@ -58,7 +58,7 @@
                                                 <div class="text-sm text-gray-900">Purchases</div>
                                             </td>
                                             <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">View Details</router-link>
+                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
@@ -81,7 +81,7 @@
                                                 <div class="text-sm text-gray-900">Purchases</div>
                                             </td>
                                             <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">View Details</router-link>
+                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
@@ -104,7 +104,7 @@
                                                 <div class="text-sm text-gray-900">Purchases</div>
                                             </td>
                                             <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">View Details</router-link>
+                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
@@ -127,7 +127,7 @@
                                                 <div class="text-sm text-gray-900">Purchases</div>
                                             </td>
                                             <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">View Details</router-link>
+                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
@@ -150,7 +150,7 @@
                                                 <div class="text-sm text-gray-900">Purchases</div>
                                             </td>
                                             <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">View Details</router-link>
+                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -170,8 +170,8 @@
 
                 <!-- Begin table -->
                 <div class="flex flex-col overflow-auto h-96">
-                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                    <div class="overflow-x-auto">
+                        <div class="py-2 align-middle inline-block min-w-full">
                             <div class="overflow-hidden border-t border-b border-gray-200">
                                 <table class="min-w-full divide-y divide-gray-200">
                                     <thead class="bg-gray-50 text-xs font-bold">

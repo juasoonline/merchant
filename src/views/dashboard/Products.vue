@@ -1,7 +1,7 @@
 <template>
 
     <!-- Begin page contents -->
-    <div class="bg-gray-200 h-screen">
+    <div class="bg-gray-200">
         <div class="flex grid-cols-2">
 
             <!-- Begin left section -->

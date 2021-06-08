@@ -3,8 +3,8 @@
     <!-- Begin contents -->
     <section class="px-6 mb-9">
         <div class="flex flex-col">
-            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="-my-2 overflow-x-auto">
+                <div class="py-2 align-middle inline-block min-w-full">
 
                     <!-- Begin items filter -->
                     <div class="bg-white p-5 rounded-t flex grid gap-5 grid-cols-4 justify-between border-b items-center">
@@ -49,15 +49,15 @@
                         <table class="min-w-full divide-y divide-gray-200">
 
                             <!-- Begin table header -->
-<!--                            <thead class="bg-white border-gray-200 border-t">-->
-<!--                                <tr>-->
-<!--                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>-->
-<!--                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>-->
-<!--                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>-->
-<!--                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>-->
-<!--                                    <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>-->
-<!--                                </tr>-->
-<!--                            </thead>-->
+                            <thead class="bg-white border-gray-200">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                                    <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                                </tr>
+                            </thead>
                             <!-- End table header -->
 
                             <!-- Begin table contents -->
