@@ -62,15 +62,15 @@
 
                             <!-- Begin table contents -->
                             <tbody class="bg-white divide-y divide-gray-200">
-                                <tr v-for="product in products.products" :key="product.id" class="cursor-pointer hover:bg-gray-50">
+                                <tr v-for="product in products.products.slice( 0, 10 )" :key="product.id" class="cursor-pointer hover:bg-gray-50">
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <router-link :to="'/product/' + product.attributes.resource_id">
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 h-10 w-10">
-                                                    <img class="h-10 w-10 rounded" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
+                                                    <img class="h-10 w-10 rounded"  :src="product.attributes.image" alt="">
                                                 </div>
                                                 <div class="ml-4">
-                                                    <div class="text-sm font-medium text-gray-900">{{ product.attributes.name.substr( 0, 20 ) }}...</div>
+                                                    <div class="text-sm font-medium text-gray-900">{{ product.attributes.name.substr( 0, 40 ) }}...</div>
                                                     <div class="text-xs text-gray-500 flex items-center">
                                                         <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
                                                         <p class="flex items-center">Free Shipping</p>
