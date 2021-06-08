@@ -59,7 +59,7 @@
 
                 <!-- Begin login info -->
                 <div class="w-full bg-gray-100 w-full bg-opacity-50 rounded-r">
-                    <img src="assets/images/backgrounds/login-bg.jpg" class="rounded-r object-cover">
+                    <img src="assets/images/backgrounds/login-bg.jpg" class="rounded-r object-cover h-full">
                 </div>
                 <!-- End login info -->
 
