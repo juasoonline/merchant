@@ -6,7 +6,7 @@
             <div class="flex grid-cols-2 bg-white rounded justify-evenly w-full shadow rounded">
 
                 <!-- Begin form contents -->
-                <div class="w-full p-20">
+                <div class="w-full p-5">
 
                     <!-- Begin logo -->
                     <div class="">
@@ -24,7 +24,8 @@
                 <!-- End form contents -->
 
                 <!-- Begin login info -->
-                <div class="bg-gray-100 w-full bg-opacity-50 rounded-r" style="background-image: url('../assets/images/backgrounds/login-bg.jpg'); background-size: cover;">
+                <div class="w-full bg-gray-100 w-full bg-opacity-50 rounded-r">
+                    <img src="assets/images/backgrounds/login-bg.jpg" class="rounded-r">
                 </div>
                 <!-- End login info -->
 

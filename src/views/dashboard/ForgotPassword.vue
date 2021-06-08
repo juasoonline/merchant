@@ -1,7 +1,7 @@
 <template>
 
     <!-- Begin site contents -->
-    <div class="bg-gray-200 h-screen">
+    <div class="">
 
         <!-- Begin top nav -->
         <top-bar></top-bar>

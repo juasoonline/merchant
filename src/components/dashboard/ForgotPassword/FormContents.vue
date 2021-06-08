@@ -3,13 +3,13 @@
     <!-- Begin form contents -->
     <section class="my-40">
         <div class="container flex m-auto justify-center px-64">
-            <div class="flex grid-cols-2 bg-white rounded justify-evenly w-full">
+            <div class="flex grid-cols-2 bg-white rounded justify-evenly w-full shadow rounded">
 
                 <!-- Begin form contents -->
-                <div class="w-full p-20">
+                <div class="w-full p-5">
 
                     <!-- Begin logo -->
-                    <div class="">
+                    <div class="pt-10">
                         <img :src="mainLogo" alt="" class="h-12 py-1.5 mb-10">
                         <h1 class="font-bold text-xl text-gray-600">Welcome back!</h1>
                         <p class="text-xs text-gray-400">Enter your email address to setup a new password.</p>
@@ -58,7 +58,8 @@
                 <!-- End form contents -->
 
                 <!-- Begin login info -->
-                <div class="bg-gray-100 w-full bg-opacity-50 rounded-r" style="background-image: url('../assets/images/backgrounds/login-bg.jpg'); background-size: cover;">
+                <div class="w-full bg-gray-100 w-full bg-opacity-50 rounded-r">
+                    <img src="assets/images/backgrounds/login-bg.jpg" class="rounded-r">
                 </div>
                 <!-- End login info -->
 
