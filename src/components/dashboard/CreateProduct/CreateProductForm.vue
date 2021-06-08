@@ -24,8 +24,7 @@
                             <path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/>
                         </svg>
                         <select v-model="product.charge_id" class="border border-gray-300 rounded text-gray-600 h-5 pl-1 pr-2 bg-white focus:outline-none appearance-none text-xs w-32">
-                            <option selected>Select...</option>
-                            <option v-for="charge in product.charges" :key="charge.attributes.resource_id"  :value="charge.id">{{ charge.attributes.name }} => {{ charge.attributes.fee}}%</option>
+                            <option v-for="charge in product.charges" :key="charge.attributes.resource_id"  :value="charge.id" selected>{{ charge.attributes.name }} => {{ charge.attributes.fee}}%</option>
                         </select>
                     </div>
                     <!-- End charge select drop -->
@@ -86,14 +85,14 @@
 
                     <!-- Begin brand -->
                     <div class="mt-1">
-                        <label class="text-gray-500 text-xs">Brand</label>
+                        <label class="text-gray-500 text-xs">Select Brand</label>
                         <div class="flex mt-1">
                             <div class="w-12 z-10 text-center pointer-events-none flex items-center justify-center border-l border-t border-b rounded-l">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
                             </div>
-                            <select name="brand" class="appearance-none border rounded-r px-3 py-2 w-full focus:outline-none">
-                                <option>Select Brand</option>
-                                <option v-for="brand in product.brands" :key="brand.id" value="">{{ brand.attributes.name }}</option>
+                            <select v-model="product.brand" class="appearance-none border rounded-r px-3 py-2 w-full focus:outline-none">
+                                <option>Select Brand...</option>
+                                <option v-for="brand in product.brands" :key="brand.id" :value="brand.id">{{ brand.attributes.name }}</option>
                             </select>
                         </div>
                     </div>
@@ -673,10 +672,9 @@
 
             onBeforeMount(() =>
             {
-
                 // Get categories
                 axios({ method: 'GET', url: 'categories?include=group,subcategory', headers: { 'Authorization': 'Bearer ' + authentication.state.token } })
-                    .then( response => { product.allCats = response.data.data } )
+                    .then( response => { product.allCats = response.data.data; product.charges = response.data.data.relationships.charges } )
                     .catch( error => { error.response })
 
                 // Get brands
@@ -684,7 +682,7 @@
                     .then( response => { product.brands = response.data.data } )
                     .catch( error => { error.response })
 
-                // Get brands
+                // Get charges
                 axios({ method: 'GET', url: 'store/' + authentication.state.user.include.store.attributes.resource_id + "/charges", headers: { 'Authorization': 'Bearer ' + authentication.state.token } })
                     .then( response => { product.charges = response.data.data } )
                     .catch( error => { error.response })
