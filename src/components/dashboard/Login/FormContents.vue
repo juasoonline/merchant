@@ -6,10 +6,10 @@
             <div class="flex grid-cols-2 bg-white rounded justify-evenly w-full shadow rounded">
 
                 <!-- Begin form contents -->
-                <div class="w-full p-5">
+                <div class="w-full p-10">
 
                     <!-- Begin logo -->
-                    <div class="">
+                    <div class="pt-10">
                         <img :src="mainLogo" alt="" class="h-12 py-1.5 mb-10">
                         <h1 class="font-bold text-xl text-gray-600">Welcome back!</h1>
                         <p class="text-xs text-gray-400">Enter your email address and password to access admin panel.</p>
@@ -25,7 +25,7 @@
 
                 <!-- Begin login info -->
                 <div class="w-full bg-gray-100 w-full bg-opacity-50 rounded-r">
-                    <img src="assets/images/backgrounds/login-bg.jpg" class="rounded-r">
+                    <img src="assets/images/backgrounds/login-bg.jpg" class="rounded-r object-cover">
                 </div>
                 <!-- End login info -->
 
