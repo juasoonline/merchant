@@ -1,8 +1,10 @@
 module.exports =
 {
+    lintOnSave: false,
+
     devServer:
     {
-        host: 'business.juasoonline.test',
-        port: '5000',
+        host: 'merchant.juasoonline.test',
+        port: '9100',
     }
 };
