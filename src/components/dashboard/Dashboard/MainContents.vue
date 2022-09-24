@@ -51,7 +51,7 @@
     import BasicStats from "@/components/dashboard/Dashboard/BasicStats";
     import Analytics from "@/components/dashboard/Dashboard/Analytics";
     import CustomerOrder from "@/components/dashboard/Dashboard/CustomerOrder";
-    import ProductsTable from "@/components/dashboard/Products/ProductsTable";
+    import ProductsTable from "@/components/dashboard/Dashboard/ProductsTable";
 
     export default
     {

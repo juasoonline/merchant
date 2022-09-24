@@ -3,7 +3,12 @@
     <!-- Begin top nav bar -->
     <div class="sticky top-0 z-40 bg-gray-50 shadow-sm py-5 px-6">
         <div class="flex justify-between text-center">
+
+            <!-- Begin left option with search bar -->
             <div></div>
+            <!-- End left option with search bar -->
+
+            <!-- Begin right options -->
             <div class="flex">
 
                 <!-- Begin notifications -->
@@ -127,6 +132,8 @@
                 <!-- End user info -->
 
             </div>
+            <!-- End right options -->
+
         </div>
     </div>
     <!-- End top nav bar -->

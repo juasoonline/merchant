@@ -10,8 +10,8 @@
 
                 <!-- Begin table -->
                 <div class="flex flex-col overflow-auto h-96">
-                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                    <div class="overflow-x-auto">
+                        <div class="py-2 align-middle inline-block min-w-full">
                             <div class="overflow-hidden border-t border-b border-gray-200">
                                 <table class="min-w-full divide-y divide-gray-200">
                                     <tbody class="bg-white divide-y divide-gray-200">
@@ -35,7 +35,7 @@
                                                 <div class="text-sm text-gray-900">Purchases</div>
                                             </td>
                                             <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">View Details</router-link>
+                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
@@ -58,7 +58,7 @@
                                                 <div class="text-sm text-gray-900">Purchases</div>
                                             </td>
                                             <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">View Details</router-link>
+                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
@@ -81,7 +81,7 @@
                                                 <div class="text-sm text-gray-900">Purchases</div>
                                             </td>
                                             <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">View Details</router-link>
+                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
@@ -104,7 +104,7 @@
                                                 <div class="text-sm text-gray-900">Purchases</div>
                                             </td>
                                             <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">View Details</router-link>
+                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
@@ -127,7 +127,7 @@
                                                 <div class="text-sm text-gray-900">Purchases</div>
                                             </td>
                                             <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">View Details</router-link>
+                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
@@ -150,7 +150,7 @@
                                                 <div class="text-sm text-gray-900">Purchases</div>
                                             </td>
                                             <td class="py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">View Details</router-link>
+                                                <router-link to="" class="text-xs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -170,144 +170,144 @@
 
                 <!-- Begin table -->
                 <div class="flex flex-col overflow-auto h-96">
-                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                    <div class="overflow-x-auto">
+                        <div class="py-2 align-middle inline-block min-w-full">
                             <div class="overflow-hidden border-t border-b border-gray-200">
                                 <table class="min-w-full divide-y divide-gray-200">
-                                    <thead class="bg-gray-50 text-xs font-bold">
+                                    <thead class="text-xs font-bold">
                                       <tr class="">
-                                          <th scope="col" class="px-6 py-3 text-left text-gray-500 uppercase tracking-wider">Order ID</th>
-                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Billing Name</th>
-                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-                                          <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Details</th>
+                                          <th scope="col" class="py-3 text-left text-gray-500 uppercase tracking-wider">Order ID</th>
+                                          <th scope="col" class="py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Billing Name</th>
+                                          <th scope="col" class="py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                          <th scope="col" class="py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Details</th>
                                       </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200">
                                         <tr>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="text-sm font-medium text-gray-900 font-bold">#MB2540</div>
                                                 </div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">Neal Matthews</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">07 Oct, 2020</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap text-right">
+                                            <td class="py-3 whitespace-nowrap text-right">
                                                 <router-link to="" class="text-xxs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="text-sm font-medium text-gray-900 font-bold">#MB2540</div>
                                                 </div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">Neal Matthews</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">07 Oct, 2020</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap text-right">
+                                            <td class="py-3 whitespace-nowrap text-right">
                                                 <router-link to="" class="text-xxs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="text-sm font-medium text-gray-900 font-bold">#MB2540</div>
                                                 </div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">Neal Matthews</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">07 Oct, 2020</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap text-right">
+                                            <td class="py-3 whitespace-nowrap text-right">
                                                 <router-link to="" class="text-xxs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="text-sm font-medium text-gray-900 font-bold">#MB2540</div>
                                                 </div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">Neal Matthews</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">07 Oct, 2020</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap text-right">
+                                            <td class="py-3 whitespace-nowrap text-right">
                                                 <router-link to="" class="text-xxs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="text-sm font-medium text-gray-900 font-bold">#MB2540</div>
                                                 </div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">Neal Matthews</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">07 Oct, 2020</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap text-right">
+                                            <td class="py-3 whitespace-nowrap text-right">
                                                 <router-link to="" class="text-xxs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="text-sm font-medium text-gray-900 font-bold">#MB2540</div>
                                                 </div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">Neal Matthews</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">07 Oct, 2020</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap text-right">
+                                            <td class="py-3 whitespace-nowrap text-right">
                                                 <router-link to="" class="text-xxs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="text-sm font-medium text-gray-900 font-bold">#MB2540</div>
                                                 </div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">Neal Matthews</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">07 Oct, 2020</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap text-right">
+                                            <td class="py-3 whitespace-nowrap text-right">
                                                 <router-link to="" class="text-xxs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="text-sm font-medium text-gray-900 font-bold">#MB2540</div>
                                                 </div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">Neal Matthews</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap">
+                                            <td class="py-3 whitespace-nowrap">
                                                 <div class="text-sm text-gray-900">07 Oct, 2020</div>
                                             </td>
-                                            <td class="px-6 py-3 whitespace-nowrap text-right">
+                                            <td class="py-3 whitespace-nowrap text-right">
                                                 <router-link to="" class="text-xxs rounded bg-juaso-primary text-white font-bold px-4 py-1 w-full focus:outline-none hover:bg-juaso-secondary">Details</router-link>
                                             </td>
                                         </tr>

@@ -789,7 +789,6 @@
         /*transition: 1s;*/
         display: none;
     }
-
     input[type=file]::file-selector-button:hover
     {
         /*background-color: #81ecec;*/

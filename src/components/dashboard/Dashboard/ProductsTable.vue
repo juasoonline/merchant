@@ -3,40 +3,22 @@
     <!-- Begin contents -->
     <section class="px-6 mb-9">
         <div class="flex flex-col">
-            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="-my-2 overflow-x-auto">
+                <div class="py-2 align-middle inline-block min-w-full">
 
                     <!-- Begin items filter -->
                     <div class="bg-white p-5 rounded-t flex grid gap-5 grid-cols-4 justify-between border-b items-center">
 
                         <!-- Begin search form -->
-                        <div class="h-8 pl-3 pr-2 bg-white border flex justify-between items-center relative text-xs">
-                            <input type="search" name="search" id="search" placeholder="Search products...." class="appearance-none w-full outline-none focus:outline-none active:outline-none"/>
-                            <button type="submit" class="ml-1 outline-none focus:outline-none active:outline-none">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-4 h-4">
-                                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                </svg>
-                            </button>
+                        <div class="h-8 pr-2 bg-white flex justify-between items-center relative">
+                            <h4 class="font-bold">Products</h4>
                         </div>
                         <!-- End search form -->
 
                         <!-- Begin display option -->
                         <div class="col-span-3 text-right">
                           <div class="relative inline-flex items-center">
-                              <p class="mr-2 text-xs text-gray-600">Select item display options</p>
-                              <svg class="w-2 h-2 absolute top-0 right-0 m-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232">
-                                  <path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648299" fill-rule="nonzero"/>
-                              </svg>
-                              <select class="border border-gray-300 text-gray-600 h-8 pl-3 pr-2 bg-white focus:outline-none appearance-none text-xs w-28">
-                                  <option value="10">Select...</option>
-                                  <option value="10" selected>10</option>
-                                  <option value="50">50</option>
-                                  <option value="100">100</option>
-                                  <option value="150">150</option>
-                                  <option value="200">200</option>
-                                  <option value="250">250</option>
-                                  <option value="300">300</option>
-                              </select>
+                              <p class="mr-2 text-xs text-gray-600"><router-link to="products">View More</router-link></p>
                           </div>
                         </div>
                         <!-- End display option -->
@@ -49,28 +31,28 @@
                         <table class="min-w-full divide-y divide-gray-200">
 
                             <!-- Begin table header -->
-<!--                            <thead class="bg-white border-gray-200 border-t">-->
-<!--                                <tr>-->
-<!--                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>-->
-<!--                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>-->
-<!--                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>-->
-<!--                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>-->
-<!--                                    <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>-->
-<!--                                </tr>-->
-<!--                            </thead>-->
+                            <thead class="bg-white border-gray-200">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                                    <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                                </tr>
+                            </thead>
                             <!-- End table header -->
 
                             <!-- Begin table contents -->
                             <tbody class="bg-white divide-y divide-gray-200">
-                                <tr v-for="product in products.products" :key="product.id" class="cursor-pointer hover:bg-gray-50">
+                                <tr v-for="product in products.products.slice( 0, 10 )" :key="product.id" class="cursor-pointer hover:bg-gray-50">
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <router-link :to="'/product/' + product.attributes.resource_id">
                                             <div class="flex items-center">
                                                 <div class="flex-shrink-0 h-10 w-10">
-                                                    <img class="h-10 w-10 rounded" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
+                                                    <img class="h-10 w-10 rounded"  :src="product.attributes.image" alt="">
                                                 </div>
                                                 <div class="ml-4">
-                                                    <div class="text-sm font-medium text-gray-900">{{ product.attributes.name.substr( 0, 20 ) }}...</div>
+                                                    <div class="text-sm font-medium text-gray-900">{{ product.attributes.name.substr( 0, 40 ) }}...</div>
                                                     <div class="text-xs text-gray-500 flex items-center">
                                                         <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
                                                         <p class="flex items-center">Free Shipping</p>

@@ -32,12 +32,24 @@
 
                             <!-- Begin business name -->
                             <div class="mt-3">
-                                <label class="text-gray-500 text-xs" for="store_name">Business Name</label>
+                                <label class="text-gray-500 text-xs" for="name">Business Name</label>
                                 <div class="flex mt-1">
                                     <div class="w-12 z-10 text-center pointer-events-none flex items-center justify-center border-l border-t border-b rounded-l bg-gray-100">
                                         <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path></svg>
                                     </div>
-                                    <input type="text" id="store_name" v-model="businessInfo.store_name" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Enter business name">
+                                    <input type="text" id="name" v-model="businessInfo.name" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Enter business name">
+                                </div>
+                            </div>
+                            <!-- End business name -->
+
+                            <!-- Begin business name -->
+                            <div class="mt-3">
+                                <label class="text-gray-500 text-xs" for="doing_business_as">Doing Business As / As Known As</label>
+                                <div class="flex mt-1">
+                                    <div class="w-12 z-10 text-center pointer-events-none flex items-center justify-center border-l border-t border-b rounded-l bg-gray-100">
+                                        <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path></svg>
+                                    </div>
+                                    <input type="text" id="doing_business_as" v-model="businessInfo.doing_business_as" class="border rounded-r px-3 py-2 w-full focus:outline-none" placeholder="Doing Business As">
                                 </div>
                             </div>
                             <!-- End business name -->
@@ -340,8 +352,8 @@
             const notification = new Notyf();
             const loader = reactive({ color: '#FFFFFF', size: '11px', loading: true, isLoading: false })
 
-            const businessInfo    = ref({ store_name: "", region: "", city: "", address: "", postal_code: "", mobile_phone: "", other_phone: "", email: "", website: "" })
-            const storeAdminInfo  = ref({ store_id: "", first_name: "", other_names: "", last_name: "", designation: "", mobile_phone: "", office_phone: "", email: "", password: "", password_confirmation: "" })
+            const businessInfo    = ref({ country_id: '1', name: "", doing_business_as: "", region: "", city: "", address: "", postal_code: "", mobile_phone: "", other_phone: "", email: "", website: "" })
+            const storeAdminInfo  = ref({ store_resource_id: "", store_id: "", first_name: "", other_names: "", last_name: "", designation: "", mobile_phone: "", office_phone: "", email: "", password: "", password_confirmation: "" })
 
             const step1           = ref({ status: false, class: "wizard-active" })
             const step2           = ref({ status: false, class: "wizard-pending" })
@@ -350,11 +362,12 @@
             const createBusiness = () =>
             {
                 loader.isLoading = true
-                axios( { method: 'POST', url: 'stores', headers: {}, data: { data: { type: "Store", attributes: { store_name: businessInfo.value.store_name, region: businessInfo.value.region, city: businessInfo.value.city, address: businessInfo.value.address, postal_code: businessInfo.value.postal_code, mobile_phone: businessInfo.value.mobile_phone, other_phone: businessInfo.value.other_phone, email: businessInfo.value.email, website: businessInfo.value.website } } } })
+                axios( { method: 'POST', url: 'stores', headers: {}, data: { data: { type: "Store", attributes: { name: businessInfo.value.name, doing_business_as: businessInfo.value.doing_business_as, region: businessInfo.value.region, city: businessInfo.value.city, address: businessInfo.value.address, postal_code: businessInfo.value.postal_code, mobile_phone: businessInfo.value.mobile_phone, other_phone: businessInfo.value.other_phone, email: businessInfo.value.email, website: businessInfo.value.website }, relationships: { country: { country_id: businessInfo.value.country_id } } } } })
                     .then( response => {
                     if ( response.data.status === "Success" )
                     {
                         storeAdminInfo.value.store_id = response.data.data.id;
+                        storeAdminInfo.value.store_resource_id = response.data.data.attributes.resource_id;
                         step1.value.status = true;
                         step1.value.class = "wizard-success";
                         step2.value.class = "wizard-active";
@@ -370,13 +383,13 @@
                     {
                         loader.isLoading = false;
                         notification.error({ position: { x: 'right', y: 'top', }, message: '<b class="text-xs leading-3">ERROR!</b><p class="text-xxs leading-4">Something went wrong. Try again later</p>', duration: 10000, ripple: false, dismissible: true })
-                        console.log( error.response );
+                        console.error( error.response );
                     })
             }
             const createAdmin = () =>
             {
                 loader.isLoading = true
-                axios( { method: 'POST', url: 'stores/administrator', headers: {}, data: { data: { type: "StoreAdministrator", attributes: { first_name: storeAdminInfo.value.first_name, other_names: storeAdminInfo.value.other_names, last_name: storeAdminInfo.value.last_name, designation: storeAdminInfo.value.designation, mobile_phone: storeAdminInfo.value.mobile_phone, office_phone: storeAdminInfo.value.office_phone, email: storeAdminInfo.value.email, password: storeAdminInfo.value.password, password_confirmation: storeAdminInfo.value.password_confirmation,  }, relationships: { store: { store_id: storeAdminInfo.value.store_id } } } } })
+                axios( { method: 'POST', url: 'store/' + storeAdminInfo.value.store_resource_id +  '/administrator', headers: {}, data: { data: { type: "StoreAdministrator", attributes: { store_resource_id: storeAdminInfo.value.store_resource_id, first_name: storeAdminInfo.value.first_name, other_names: storeAdminInfo.value.other_names, last_name: storeAdminInfo.value.last_name, designation: storeAdminInfo.value.designation, mobile_phone: storeAdminInfo.value.mobile_phone, office_phone: storeAdminInfo.value.office_phone, email: storeAdminInfo.value.email, password: storeAdminInfo.value.password, password_confirmation: storeAdminInfo.value.password_confirmation }, relationships: { store: { store_id: storeAdminInfo.value.store_id } } } } })
                     .then( response => {
                     if ( response.data.status === "Success" )
                     {

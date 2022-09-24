@@ -1,5 +1,6 @@
 <template>
 
+    <!-- Begin contents -->
     <form @submit.prevent="signIn">
         <div class="mt-6 text-sm">
 
@@ -61,6 +62,7 @@
 
         </div>
     </form>
+    <!-- End contents -->
 
 </template>
 
@@ -88,7 +90,16 @@
                 loader.isLoading = true
                 authentication.loginUser( loginData ).then(() =>
                 {
-                    router.replace('/dashboard' );
+                    if ( authentication.isAuthenticated() === false )
+                    {
+                        loader.isLoading = false
+                        notification.error({ position: { x: 'right', y: 'top', }, message: '<b class="text-xs leading-3">ERROR!</b><p class="text-xxs leading-4">System busy. Please try again later.</p>', duration: 8000, ripple: false, dismissible: true })
+                    }
+                    else
+                    {
+                        router.replace('/dashboard' );
+                        loader.isLoading = false
+                    }
                 }).catch(() =>
                 {
                     loader.isLoading = false;
