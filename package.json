@@ -1,5 +1,5 @@
 {
-  "name": "business.juasoonline",
+  "name": "merchant.juasoonline",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -41,13 +41,18 @@
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,vue}": [
-      "vue-cli-service lint",
-      "git add"
-    ]
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
   }
 }
